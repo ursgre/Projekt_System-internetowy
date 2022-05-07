@@ -1,0 +1,55 @@
+const LocalStrategy = require("passport-local").Strategy;
+const bcrypt = require("bcrypt");
+const users = require("./models/users");
+
+function init(passport) {
+	const authUser = async (email, password, done) => {
+		users
+			.sync()
+			.then(result => {
+				return users.findOne({ where: { email: email } });
+			})
+			.then(user => {
+				if (user) {
+					bcrypt.compare(password, user.password, (err, isMatch) => {
+						if (err) {
+							console.log(err);
+						} else if (isMatch) {
+							return done(null, user);
+						} else {
+							//password is incorrect
+							return done(null, false, { message: "Password is incorrect" });
+						}
+					});
+				} else {
+					// No user
+					return done(null, false, {
+						message: "No user with that email address",
+					});
+				}
+			});
+	};
+	passport.use(
+		new LocalStrategy(
+			{
+				usernameField: "email",
+				passwordField: "password",
+			},
+			authUser
+		)
+	);
+
+	passport.serializeUser((user, done) => done(null, user.id));
+	passport.deserializeUser((id, done) => {
+		users
+			.sync()
+			.then(result => {
+				return users.findOne({ where: { id: id } });
+			})
+			.then(user => {
+				return done(null, user);
+			});
+	});
+}
+
+module.exports = init;
