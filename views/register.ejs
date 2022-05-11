@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rejestracja</title>
+    <link rel="stylesheet" href="register.css">
+</head>
+
+<body>
+
+    <div class="main">
+
+        <ul>
+            <li><a href="/homeAdmin">Zarejestruj ucznia</a></li>
+            <li><a href="/deleteUser">Usuń ucznia</a></li>
+            <li><a href="/logout">Wyloguj</a></li>
+
+        </ul>
+
+    </div>
+
+    <div class="center">
+        <h1>Zarejestruj ucznia</h1>
+        <form action="/homeAdmin" method="post">
+            <div class="txt_field">
+                <input type="text" name="name">
+                <span></span>
+                <label>Imię ucznia</label>
+            </div>
+            <div class="txt_field">
+                <input type="text" name="surname">
+                <span></span>
+                <label>Nazwisko ucznia</label>
+            </div>
+            <div class="txt_field">
+                <input type="email" name="email">
+                <span></span>
+                <label>E-mail ucznia</label>
+            </div>
+            <div class="txt_field">
+                <input type="password" name="password">
+                <span></span>
+                <label>Hasło</label>
+            </div>
+            <div class="txt_field">
+                <input type="password" name="password2">
+                <span></span>
+                <label>Powtórz hasło</label>
+            </div>
+            <input type="submit" value="Zapisz ucznia">
+        </form>
+        <div class="errors">
+            <p>
+                <% if(messages.success_msg) { %>
+                    <%= messages.success_msg %>
+                        <% } %>
+                            <%= error %>
+            </p>
+        </div>
+    </div>
+
+</body>
+
+</html>

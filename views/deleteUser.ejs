@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuwanie ucznia</title>
+    <link rel="stylesheet" href="deleteUser.css">
+</head>
+
+<body>
+
+    <div class="main">
+
+        <ul>
+            <li><a href="/homeAdmin">Zarejestruj ucznia</a></li>
+            <li><a href="/deleteUser">Usuń ucznia</a></li>
+            <li><a href="/logout">Wyloguj</a></li>
+
+        </ul>
+
+    </div>
+
+    <div class="center">
+        <h1>Usuń ucznia</h1>
+        <form action="/deleteUser" method="post">
+            <div class="txt_field">
+                <input type="email" name="email">
+                <span></span>
+                <label>Email</label>
+            </div>
+            <input type="submit" value="Usuń ucznia">
+        </form>
+        <div class="errors">
+            <p>
+                <%= error %>
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>

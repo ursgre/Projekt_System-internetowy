@@ -1,0 +1,19 @@
+const Sequelize = require("sequelize");
+
+const sequelize = new Sequelize("dziennik", "root", "", {
+	dialect: "mysql",
+	host: "localhost",
+});
+
+sequelize
+	.authenticate()
+	.then(() => {
+		console.log("mysql connected");
+	})
+	.catch(err => {
+		if (err) {
+			throw err;
+		}
+	});
+
+module.exports = sequelize;

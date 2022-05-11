@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konkursy</title>
+    <link rel="stylesheet" href="konkursy.css">
+</head>
+
+<body>
+    <header>
+        <div class="main">
+
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/oceny">Oceny</a></li>
+                <li><a href="/uwagi">Uwagi</a></li>
+                <li><a href="/konkursy">Konkursy</a></li>
+                <li><a href="/logout">Wyloguj</a></li>
+            </ul>
+
+        </div>
+
+        <% if(action=='add' ) { %>
+            <table>
+                <tr>
+
+                    <th style="background-color: lightgreen; ">Nazwa</th>
+                    <th style="background-color: yellow; ">Data</th>
+                    <th style="background-color: hotpink; ">Godzina</th>
+                    <th style="background-color: deepskyblue; ">Sala</th>
+                </tr>
+                <% if(sampleData) { sampleData.forEach(data=> { %>
+                    <tr>
+                        <td style="background-color: lightgreen; ">
+                            <%= data.nazwa %>
+                        </td>
+                        <td style="background-color: yellow; ">
+                            <%= data.data %>
+                        </td>
+                        <td style="background-color: hotpink; ">
+                            <%= data.godzina %>
+                        </td>
+                        <td style="background-color: deepskyblue; ">
+                            <%= data.sala %>
+                        </td>
+                    </tr>
+                    <% }); } %>
+            </table>
+            <% } %>
+
+    </header>
+</body>
+
+</html>

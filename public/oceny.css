@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "Poppins", sans-serif;
+}
+
+header {
+	background-image: url(przedmioty.jpg);
+	height: 100vh;
+	background-size: cover;
+	background-position: center;
+}
+
+ul {
+	float: right;
+	list-style-type: none;
+	margin-top: 25px;
+}
+
+ul li {
+	display: inline-block;
+}
+
+ul li a {
+	text-decoration: none;
+	color: black;
+	padding: 5px 20px;
+	border: 1px solid black;
+	transition: 0.6s ease;
+	background-color: white;
+}
+
+ul li a:hover {
+	background-color: lightblue;
+}
+
+ul li a:active {
+	background-color: lightblue;
+}
+
+.main {
+	max-width: 1200px;
+	margin: auto;
+}
+
+.title {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-42%, -50%);
+}
+
+.title h1 {
+	color: forestgreen;
+	font-size: 70px;
+	font-style: oblique;
+}
+
+table,
+table th,
+table td,
+table caption {
+	border: 1px solid black;
+	position: center;
+}
+
+table {
+	position: absolute;
+	top: 30%;
+	width: 100%;
+	background-color: white;
+}
+
+td {
+	width: 100px;
+}

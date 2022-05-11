@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "Poppins", sans-serif;
+}
+
+header {
+	background-image: url(kredki.jpg);
+	height: 100vh;
+}
+
+ul {
+	float: right;
+	list-style-type: none;
+	margin-top: 25px;
+}
+
+ul li {
+	display: inline-block;
+}
+
+ul li a {
+	text-decoration: none;
+	color: black;
+	padding: 5px 20px;
+	border: 1px solid black;
+}
+
+ul li a:hover {
+	background-color: lightblue;
+	color: #000;
+}
+
+.main {
+	max-width: 1200px;
+	margin: auto;
+}
+
+.button {
+	position: absolute;
+	top: 70%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.button1 {
+	position: absolute;
+	top: 80%;
+	left: 50%;
+	transform: translate(-60%, -80%);
+}
+
+.btn {
+	border: 1px solid transparent;
+	padding: 10px 30px;
+	color: black;
+	text-decoration: none;
+	background-color: greenyellow;
+}
+
+.btn1 {
+	border: 1px solid transparent;
+	padding: 10px 30px;
+	color: black;
+	text-decoration: none;
+	background-color: lightpink;
+}
+
+.btn2 {
+	border: 1px solid transparent;
+	padding: 10px 30px;
+	color: black;
+	text-decoration: none;
+	background-color: lightblue;
+}
+
+.btn:hover {
+	background-color: lightblue;
+	color: #000;
+}
+
+.btn1:hover {
+	background-color: lightblue;
+	color: #000;
+}

@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oceny</title>
+    <link rel="stylesheet" href="oceny.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="main">
+
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/oceny">Oceny</a></li>
+                <li><a href="/uwagi">Uwagi</a></li>
+                <li><a href="/konkursy">Konkursy</a></li>
+                <li><a href="/logout">Wyloguj</a></li>
+
+            </ul>
+
+        </div>
+
+        <% if(action=='add' ) { %>
+            <table>
+                <tr>
+                    <th style="background-color: lavenderblush; ">Polski</th>
+                    <th style="background-color: lightgoldenrodyellow; ">Matematyka</td>
+                    <th style="background-color: lightgreen; ">Angielski</th>
+                    <th style="background-color: lightpink; ">Historia</th>
+                    <th style="background-color: lightblue; ">Przyroda</th>
+                    <th style="background-color: lightyellow; ">Fizyka</th>
+                    <th style="background-color: lavenderblush; ">WF</th>
+                    <th style="background-color: lightgoldenrodyellow; ">Religia</th>
+
+                </tr>
+                <% if(sampleData) { sampleData.forEach(data=> { %>
+                    <tr>
+                        <td style="background-color: lavenderblush; ">
+                            <%= data.polski %>
+                        </td>
+                        <td style="background-color: lightgoldenrodyellow; ">
+                            <%= data.matematyka %>
+                        </td>
+                        <td style="background-color: lightgreen; ">
+                            <%= data.angielski %>
+                        </td>
+                        <td style="background-color: lightpink; ">
+                            <%= data.historia %>
+                        </td>
+                        <td style="background-color: lightblue; ">
+                            <%= data.przyroda %>
+                        </td>
+                        <td style="background-color: lightyellow; ">
+                            <%= data.fizyka %>
+                        </td>
+                        <td style="background-color: lavenderblush; ">
+                            <%= data.wf %>
+                        </td>
+                        <td style="background-color: lightgoldenrodyellow; ">
+                            <%= data.religia %>
+                        </td>
+                    </tr>
+                    <% }); } %>
+            </table>
+            <% } %>
+
+    </header>
+
+</body>
+
+</html>
